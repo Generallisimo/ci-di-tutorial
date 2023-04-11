@@ -1,23 +1,32 @@
 name: GitHub Actions Demo
+# при каждой команде push создается проверка 
+# on: [push]
+# проверку на пуш
 on:
   push:
     branches: [ main ]
+  # и на пул запрос
   pull_request:
     branches: [ main ]
 jobs:
   init:
+    # запуск на ubuntu
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-varsion: [ 18.x ]
     steps:
       - uses: actions/checkout@v3
+      # укз версию node на которой работать
       - name: Staring Node.js ${{ matrix.node-version }}
+      #установка
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+      # здесь мы устанавливаем зависимости 
       - name: install modules
         run: npm install
+        #тесты
       - name: build project
         run: npm run build
       - name: build storybook

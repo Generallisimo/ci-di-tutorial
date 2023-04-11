@@ -1,11 +1,10 @@
 import {plus} from "./plus"
 
-describe('plus', function(){
-    test('positive', ()=>{
+describe('plus', function () {
+    test('positive', () => {
         expect(plus(5, 5)).toBe(10);
     })
-    test('negative', ()=>{
+    test('negative', () => {
         expect(plus(-5, -5)).toBe(-10);
     })
-
 });
