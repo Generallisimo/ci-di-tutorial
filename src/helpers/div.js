@@ -1,0 +1,1 @@
+export const error = (a, b) => a / b;
