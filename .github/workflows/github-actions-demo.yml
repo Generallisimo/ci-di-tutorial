@@ -23,7 +23,6 @@ jobs:
       - name: Staring Node.js ${{ matrix.node-version }}
       #установка
         uses: actions/setup-node@v3
-
       # здесь мы устанавливаем зависимости 
       - name: install modules
         run: npm install
